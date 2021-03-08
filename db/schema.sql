@@ -1,4 +1,4 @@
-CREATE TABLE department (id INT PRIMARY KEY, NAME VARCHAR(30));
+CREATE TABLE department (id INT PRIMARY KEY, name VARCHAR(30));
 
 CREATE TABLE roles (id INT PRIMARY KEY, title VARCHAR(30), salary DECIMAL, department_id INT);
 
