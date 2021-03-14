@@ -23,7 +23,7 @@ async function userPrompts() {
                 name: "View all roles",
                 value: "View roles"
                 },
-                {name: "Add a role"
+                {name: "Add a role",
                 value: "Add role"
                 },
                 {
