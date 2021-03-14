@@ -12,10 +12,32 @@ async function userPrompts() {
             message: "What would you like to do?",
             choices: [
                 {
-                name: "View all employees",
-                value: "View all"
+                name: "View all departments",
+                value: "View dep"
                 },
-                {// this is where another option will go}
+                {
+                name: "Add a department",
+                value: "Add dep"
+                },
+                {
+                name: "View all roles",
+                value: "View roles"
+                },
+                {name: "Add a role"
+                value: "Add role"
+                },
+                {
+                name: "View all employees",
+                value: "View emp"
+                },
+                {
+                name: "Add an employee",
+                value: "Add emp"
+                },
+                {
+                name: "Update an employee",
+                value: "Update emp"
+                }
             ]
         }
     ]);
@@ -23,18 +45,66 @@ async function userPrompts() {
 
 
 switch(userChoices) {
-    case "view all":
+    case "view dep":
+        return viewAllDepartments();
+    case "add dep":
+        return addDepartment();
+    case "view roles":
+        return viewAllRoles();
+    case "add role":
+        return addRole();
+    case "view emp":
         return viewAllEmployees();
-    case "(next value)"
+    case "add emp":
+        return addEmployee();
+    case "update emp":
+        return updateEmployee();
 }   
 }
 
+async function viewAllDepartments() {
+    const departments = await db.findAllDepartments();
+    console.log(departments);
+    userPrompts();
+}
+
+async function addDepartment() {
+    const department = await db.createDepartment();
+    console.log(department);
+    userPrompts();
+}
+
+async function viewAllRoles() {
+    const roles = await db.findAllRoles();
+    console.log(roles);
+    userPrompts();
+}
+
+async function addRole() {
+    const role = await db.createRole();
+    console.log(role);
+    userPrompts();
+}
 
 async function viewAllEmployees() {
     const employees = await db.findAllEmployees();
     console.log(employees);
     userPrompts();
 }
+
+async function addEmployee() {
+    const employee = await db.createEmployee();
+    console.log(employee);
+    userPrompts();
+}
+
+async function updateEmployee() {
+    const employee = await db.updateEmployee();
+    console.log(employee);
+    userPrompts();
+}
+
+
 
 
 // // request to view all departments
