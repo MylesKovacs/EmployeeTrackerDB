@@ -1,17 +1,18 @@
 {
   "name": "employeeTracker",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "A node server database that allows a company to keep track of the departments, roles, and employees on hire.",
+  "main": "app.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^8.0.0",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
